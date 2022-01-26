@@ -14,9 +14,9 @@ namespace Core.DataAccess
     //just can be new
     public interface IEntityRepository<T> where T : class, IEntity, new()
     {
-        List<T> GetAll(Expression<Func<T, bool>> filter = null); //for search
+        List<T> GetAll(Expression<Func<T, bool >> filter = null); //for search
 
-        T Get(Expression<Func<T, bool>> filter);
+        T Get(Expression<Func<T, bool >> filter);
 
         void Add(T entity);
 

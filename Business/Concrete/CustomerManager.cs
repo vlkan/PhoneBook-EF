@@ -12,16 +12,16 @@ namespace Business.Concrete
 {
     public class CustomerManager : ICustomerService
     {
-        ICustomerDal _customeryDal;
+        ICustomerDal _customerDal;
 
         public CustomerManager(ICustomerDal customerDal)
         {
-            _customeryDal = customerDal;
+            _customerDal = customerDal;
         }
 
         public List<Customer> GetAll()
         {
-            return _customeryDal.GetAll();
+            return _customerDal.GetAll();
         }
     }
 }

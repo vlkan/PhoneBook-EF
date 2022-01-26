@@ -35,12 +35,18 @@ namespace DataAccess.Concrete.EntityFramework
 
         public Customer Get(Expression<Func<Customer, bool>> filter)
         {
-            throw new NotImplementedException();
+            using (var context = new PhoneBookContext()) 
+            { 
+                return context.Set<Customer>().SingleOrDefault(filter);
+            }
         }
 
         public List<Customer> GetAll(Expression<Func<Customer, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            using (PhoneBookContext context = new PhoneBookContext())
+            {
+                return filter == null ? context.Set<Customer>().ToList() : context.Set<Customer>().Where(filter).ToList();
+            }
         }
 
         public void Update(Customer entity)
