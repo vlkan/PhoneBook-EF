@@ -29,22 +29,22 @@ namespace Business.Concrete
 
         public IDataResult<List<Customer>> GetAll()
         {
-            return new DataResult<List<Customer>(_customerDal.GetAll(), true, "Kişiler Listelendi.");
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.UserAdded);
         }
 
         public IDataResult<List<Customer>> GetAllByCustomerName(string name)
         {
-            return _customerDal.GetAll(c => c.CustomerName == name);
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(c => c.CustomerName == name));
         }
 
         public IDataResult<List<Customer>> GetAllByCustomerPhoneNumber(string number)
         {
-            return _customerDal.GetAll(c => c.CustomerPhoneNumber == number);
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(c => c.CustomerPhoneNumber == number));
         }
 
         public IDataResult<List<Customer>> GetAllByCustomerSearch(string search)
         {
-            return _customerDal.GetAll(c => c.CustomerPhoneNumber == search || c.CustomerName == search);
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(c => c.CustomerPhoneNumber == search || c.CustomerName == search));
         }
     }
 }
