@@ -11,9 +11,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
         {
             CustomerManager customer1 = new CustomerManager(new EfCustomerDal());
 
-            foreach (var customer in customer1.GetAll())
+            foreach (var customer in customer1.GetAllByCustomerName("Volkan"))
             {
-                Console.WriteLine(customer.Id);
+                Console.WriteLine(customer.CustomerName);
             }
         }
     }

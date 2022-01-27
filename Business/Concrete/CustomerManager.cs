@@ -23,5 +23,15 @@ namespace Business.Concrete
         {
             return _customerDal.GetAll();
         }
+
+        public List<Customer> GetAllByCustomerName(string name)
+        {
+            return _customerDal.GetAll(c => c.CustomerName == name);
+        }
+
+        public List<Customer> GetAllByCustomerPhoneNumber(string number)
+        {
+            return _customerDal.GetAll(c => c.CustomerPhoneNumber == number);
+        }
     }
 }

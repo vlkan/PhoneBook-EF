@@ -10,5 +10,7 @@ namespace Business.Abstract
     public interface ICustomerService
     {
         List<Customer> GetAll();
+        List<Customer> GetAllByCustomerName(string name);
+        List<Customer> GetAllByCustomerPhoneNumber(string number);
     }
 }
