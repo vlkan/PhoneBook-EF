@@ -33,5 +33,10 @@ namespace Business.Concrete
         {
             return _customerDal.GetAll(c => c.CustomerPhoneNumber == number);
         }
+
+        public List<Customer> GetAllByCustomerSearch(string search)
+        {
+            return _customerDal.GetAll(c => c.CustomerPhoneNumber == search || c.CustomerName == search);
+        }
     }
 }

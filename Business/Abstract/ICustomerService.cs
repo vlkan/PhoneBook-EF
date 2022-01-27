@@ -12,5 +12,6 @@ namespace Business.Abstract
         List<Customer> GetAll();
         List<Customer> GetAllByCustomerName(string name);
         List<Customer> GetAllByCustomerPhoneNumber(string number);
+        List<Customer> GetAllByCustomerSearch(string search);
     }
 }
