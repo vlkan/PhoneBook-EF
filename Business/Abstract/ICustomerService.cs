@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace Business.Abstract
         List<Customer> GetAllByCustomerName(string name);
         List<Customer> GetAllByCustomerPhoneNumber(string number);
         List<Customer> GetAllByCustomerSearch(string search);
+
+        IResult Add(Customer customer);
     }
 }
