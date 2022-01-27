@@ -10,10 +10,10 @@ namespace Business.Abstract
 {
     public interface ICustomerService
     {
-        List<Customer> GetAll();
-        List<Customer> GetAllByCustomerName(string name);
-        List<Customer> GetAllByCustomerPhoneNumber(string number);
-        List<Customer> GetAllByCustomerSearch(string search);
+        IDataResult<List<Customer>> GetAll();
+        IDataResult<List<Customer>> GetAllByCustomerName(string name);
+        IDataResult<List<Customer>> GetAllByCustomerPhoneNumber(string number);
+        IDataResult<List<Customer>> GetAllByCustomerSearch(string search);
 
         IResult Add(Customer customer);
     }

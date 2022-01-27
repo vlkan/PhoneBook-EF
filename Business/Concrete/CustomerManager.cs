@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
@@ -23,25 +24,25 @@ namespace Business.Concrete
         public IResult Add(Customer customer)
         {
             _customerDal.Add(customer);
-            return new Result(true,"Kişi Eklendi.");
+            return new SuccessResult(Messages.UserAdded);
         }
 
-        public List<Customer> GetAll()
+        public IDataResult<List<Customer>> GetAll()
         {
-            return _customerDal.GetAll();
+            return new DataResult<List<Customer>(_customerDal.GetAll(), true, "Kişiler Listelendi.");
         }
 
-        public List<Customer> GetAllByCustomerName(string name)
+        public IDataResult<List<Customer>> GetAllByCustomerName(string name)
         {
             return _customerDal.GetAll(c => c.CustomerName == name);
         }
 
-        public List<Customer> GetAllByCustomerPhoneNumber(string number)
+        public IDataResult<List<Customer>> GetAllByCustomerPhoneNumber(string number)
         {
             return _customerDal.GetAll(c => c.CustomerPhoneNumber == number);
         }
 
-        public List<Customer> GetAllByCustomerSearch(string search)
+        public IDataResult<List<Customer>> GetAllByCustomerSearch(string search)
         {
             return _customerDal.GetAll(c => c.CustomerPhoneNumber == search || c.CustomerName == search);
         }
