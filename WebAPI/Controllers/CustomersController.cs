@@ -19,10 +19,32 @@ namespace WebAPI.Controllers
             _customerService = customerService;
         }
 
-        [HttpGet]
-        public List<Customer> Get() {
+        [HttpGet("getall")]
+        public IActionResult GetAll() {
             var result = _customerService.GetAll();
-            return result.Data;
+            if (result.Success) {
+                return Ok(result);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpGet("search")]
+        public IActionResult Search(string search) {
+            var result = _customerService.GetAllByCustomerSearch(search);
+            if (result.Success) {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpPost("add")]
+        public IActionResult Add(Customer customer) 
+        {
+            var result = _customerService.Add(customer);
+            if (result.Success) {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
     }
 }

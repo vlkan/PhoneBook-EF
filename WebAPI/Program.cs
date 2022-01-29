@@ -13,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ICustomerService, CustomerManager>(); //when call service, create new manager
 builder.Services.AddSingleton<ICustomerDal, EfCustomerDal>();
+//autofac
 
 
 var app = builder.Build();

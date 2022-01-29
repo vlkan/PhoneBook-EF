@@ -11,5 +11,6 @@ namespace Business.Constants
         public static string UserAdded = "Kişi Eklendi.";
         public static string UserDeleted = "Kişi Silindi.";
         public static string UserUpdated = "Kişi Güncellendi.";
+        public static string SuccessToList = "Tüm Kişiler Listelendi.";
     }
 }

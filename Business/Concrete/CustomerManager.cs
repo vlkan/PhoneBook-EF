@@ -29,7 +29,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Customer>> GetAll()
         {
-            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.UserAdded);
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.SuccessToList);
         }
 
         public IDataResult<List<Customer>> GetAllByCustomerName(string name)
