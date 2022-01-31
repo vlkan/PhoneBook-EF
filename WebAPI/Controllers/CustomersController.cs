@@ -14,6 +14,7 @@ namespace WebAPI.Controllers
         ICustomerService _customerService;
         //loosely coupled - gevşek bağımlılık.
         //IoC Container -- Inversion of Control working like box. new in memory. Adressed using which class
+        //Volkan ÖNDER
         public CustomersController(ICustomerService customerService)
         {
             _customerService = customerService;

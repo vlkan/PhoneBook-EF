@@ -15,6 +15,7 @@ namespace Business.Concrete
     public class CustomerManager : ICustomerService
     {
         ICustomerDal _customerDal;
+        //Volkan ÖNDER
 
         public CustomerManager(ICustomerDal customerDal)
         {
