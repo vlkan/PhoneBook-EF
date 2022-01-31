@@ -16,5 +16,6 @@ namespace Business.Abstract
         IDataResult<List<Customer>> GetAllByCustomerSearch(string search);
 
         IResult Add(Customer customer);
+        IResult Delete(Customer customer);
     }
 }

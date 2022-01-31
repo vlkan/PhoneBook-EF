@@ -28,6 +28,12 @@ namespace Business.Concrete
             return new SuccessResult(Messages.UserAdded);
         }
 
+        public IResult Delete(Customer customer)
+        {
+            _customerDal.Delete(customer);
+            return new SuccessResult(Messages.UserDeleted);
+        }
+
         public IDataResult<List<Customer>> GetAll()
         {
             return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.SuccessToList);

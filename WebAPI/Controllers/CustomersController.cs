@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
         public IActionResult Search(string search) {
             var result = _customerService.GetAllByCustomerSearch(search);
             if (result.Success) {
-                return Ok(result.Data);
+                return Ok(result);
             }
             return BadRequest(result.Message);
         }
@@ -46,6 +46,17 @@ namespace WebAPI.Controllers
         {
             var result = _customerService.Add(customer);
             if (result.Success) {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("delete")]
+        public IActionResult Delete(Customer customer)
+        {
+            var result = _customerService.Delete(customer);
+            if (result.Success)
+            {
                 return Ok(result);
             }
             return BadRequest(result);
