@@ -8,10 +8,10 @@ namespace Business.Constants
 {
     public static class Messages
     {
-        public static string UserAdded = "Kişi Eklendi.";
-        public static string UserDeleted = "Kişi Silindi.";
-        public static string UserUpdated = "Kişi Güncellendi.";
-        public static string SuccessToList = "Tüm Kişiler Listelendi.";
+        public static string UserAdded = "User Added.";
+        public static string UserDeleted = "User Deleted.";
+        public static string UserUpdated = "User Uptaded.";
+        public static string SuccessToList = "All User.";
         public static string Author = "Volkan ÖNDER";
     }
 }

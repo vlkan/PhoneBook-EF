@@ -31,6 +31,11 @@ namespace DataAccess.Concrete.InMemory
             _customers.Remove(customerToDelete);
         }
 
+        public void Delete(Expression<Func<Customer, bool>> id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Customer Get(Expression<Func<Customer, bool>> filter)
         {
             throw new NotImplementedException();
